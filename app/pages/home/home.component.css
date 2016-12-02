@@ -1,0 +1,13 @@
+.title{
+    text-align: center;
+    margin-top: 15%;
+    font-size: 2em;
+    display: block;
+    color: #f00;
+}
+.container{
+    background-image: url(images/home.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}

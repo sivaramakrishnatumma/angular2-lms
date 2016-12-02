@@ -1,0 +1,40 @@
+<div class="body">
+  <h2>View Books</h2>
+  <div class="search-div">
+    <label>Search by Title</label>&nbsp;
+    <input type="text" [(ngModel)] = "searchText"/>
+  </div>
+  <div class="search-div">
+    <label>Sort by</label>&nbsp;
+    <select [(ngModel)]="sortByKey">
+      <option value="bookId">Book Id</option>
+      <option value="bookTitle">Title</option>
+      <option value="topic">Topic</option>
+      <option value="author">Author</option>
+      <option value="cost">Cost</option>
+    </select>
+  </div>
+  <table>
+    <tr *ngFor="let book of books | searchpipe: searchText | sortBy: sortByKey">
+      <td><img src="{{book.imgUrl}}" /></td>
+      <td>
+        <div>
+          <ul>
+            <li><label>Book ID:</label>&nbsp;{{book.bookId}}</li>
+            <li><label>Title:</label>&nbsp;{{book.bookTitle}}</li>
+            <li><label>Topic:</label>&nbsp;{{book.topic}}</li>
+            <li><label>Author:</label>&nbsp;{{book.author}}</li>
+            <li><label>Cost:</label>&nbsp;{{book.cost}}</li>
+          </ul>
+        </div>
+      </td>
+      <td>
+        <label class="available" *ngIf="!book.issued">Available</label>
+        <label class="not-available" *ngIf="book.issued">Not Available</label>
+        <!--<button (click) = "openDetails(book.bookId)">View Details</button>-->
+        <a [routerLink]="['/viewdetails',  book.bookId ]" routerLinkActive="active">View Details</a>
+      </td>
+    </tr>
+  </table>
+
+</div>

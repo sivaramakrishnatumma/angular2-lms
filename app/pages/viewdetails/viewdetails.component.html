@@ -1,0 +1,25 @@
+<div class="body">
+  <h2>Selected Book Details</h2>
+  <table>
+    <tr>
+      <td><img src="{{book.imgUrl}}" /></td>
+      <td>
+        <div>
+          <ul>
+            <li><label>Book ID:</label>&nbsp;{{book.bookId}}</li>
+            <li><label>Title:</label>&nbsp;{{book.bookTitle}}</li>
+            <li><label>Topic:</label>&nbsp;{{book.topic}}</li>
+            <li><label>Author:</label>&nbsp;{{book.author}}</li>
+            <li><label>Cost:</label>&nbsp;{{book.cost}}</li>
+          </ul>
+        </div>
+      </td>
+      <td>
+        <label class="available" *ngIf="!book.issued">Available</label>
+        <label class="not-available" *ngIf="book.issued">Not Available</label>
+        <button>Book</button>
+      </td>
+    </tr>
+  </table>
+
+</div>
