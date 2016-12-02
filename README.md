@@ -9,7 +9,7 @@ Library Management System in Angular 2
 
 # How to start
 
-**Note** that this seed project requires node v0.12.x or higher and npm 3.x.x.
+**Note** that this project requires node v0.12.x or higher and npm 3.x.x.
 
 ```bash
 npm install
